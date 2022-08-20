@@ -14,5 +14,5 @@ function ingresar(){
 }
 
 function IngresoExito(){
-    window.location.replace("/inicio.html")
+    window.location.href = "inicio.html";
 }
