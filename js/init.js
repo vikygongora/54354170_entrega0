@@ -6,7 +6,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
-const URL_AUTOS = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+
+
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -40,3 +41,6 @@ let getJSONData = function(url){
         return result;
     });
 }
+let guardadoEmail = localStorage.email
+document.getElementById("email").innerHTML = guardadoEmail; //localStorage guardado el imail en una variable y puesto con un inner.
+

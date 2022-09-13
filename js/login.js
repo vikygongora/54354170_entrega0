@@ -16,3 +16,6 @@ function ingresar(){
 function IngresoExito(){
     window.location.href = "inicio.html";
 }
+boton.addEventListener("click", (e) => {
+  localStorage.setItem('email', email.value) //localstorage toma el value del elemento email-input 
+});
