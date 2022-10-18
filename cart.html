@@ -9,6 +9,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/estilo.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,18 +30,49 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="email"></a>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" class="nav-link" id="email" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" id="cierra">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container" >
+      <div class="text-center p-4">
+        <h2>Carrito de compras</h2>
+        <div class="row p-4">
+          <div class="col"></div>
+          <div class="col">Nombre</div>
+          <div class="col">Costo</div>
+          <div class="col">Cantidad</div>
+          <div class="col">Subtotal</div>
+        </div> <hr>
+        <div id="comprar"></div>
+      </div>    
+    </div>
+    <div class="container" class="text-center p-4" >
+      <h3>Tipo de envío</h3>
+        <form class="formulario" action="">
+          <input type="radio" > <p>Premium 2 a 5 días (15%)</p>
+          <input type="radio"  > <p>Express de 5 a 8 días (7%)</p>
+          <input type="radio" > <p>Standar de 12 a 15 días (5%)</p>
+          <h3>Dirección de envío</h3>
+          <div class="row p-4">
+              <div class="col"><p>Calle</p><input type="text"> </div>
+              <div class="col"><p>Número</p><input type="text"> </div>
+          </div>
+          <div class="row p-4">
+              <div class="col"><p>Esquina</p><input type=""></div> 
+              <div><input type="submit"></div>
+          </div>
+        </form>
     </div>
   </main>
   <footer class="text-muted">

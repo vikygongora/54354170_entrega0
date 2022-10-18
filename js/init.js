@@ -6,6 +6,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
+let cerrar = document.getElementById("cierra"); //creo variable
 
 
 
@@ -42,5 +43,14 @@ let getJSONData = function(url){
     });
 }
 let guardadoEmail = localStorage.email
-document.getElementById("email").innerHTML = guardadoEmail; //localStorage guardado el imail en una variable y puesto con un inner.
+document.getElementById("email").innerHTML = guardadoEmail; 
+ 
+
+
+cerrar.addEventListener("click", seCierra); // creo evento de click
+
+function seCierra(){ //funcion para cerrar
+  localStorage.clear()
+  window.location.href = "index.html";
+};
 

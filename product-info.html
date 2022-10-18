@@ -30,19 +30,42 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="email"></a>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" class="nav-link" id="email" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" id="cierra">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container" id="container-info">  
     </div>
+    <div id="imagenes-info" class=" container d-flex justify-content-center"></div><br> <!-- creacion de div para info imagenes, descripción y comentarios-->>
+    <hr>
+    <div id="contenedor-comentarios"></div> 
+    <div class="">
+      <h4>Comentar</h4>
+      <form> <!-- formulario para enviar opiniones y puntuar los productos-->
+        <textarea style="width:400px; height: 200px;" placeholder="Deja tu comentario aquí" ></textarea><br>
+        <P>Tu puntuación</P>
+        <select name="score" id="estrellas"style="width:100px" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select><br><br>
+        <button class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <div id="related"></div>
+    
   </main>
   <footer class="text-muted">
     <div class="container">

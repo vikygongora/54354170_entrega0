@@ -2,14 +2,14 @@ let identifica = localStorage.getItem('catID')
 const URL_PRODUCTOS = "https://japceibal.github.io/emercado-api/cats_products/" + identifica + ".json";
 let productos = []; 
 
-//filtrado y ordenado
+
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
-//orden botones 
+ 
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -21,7 +21,7 @@ function sortCategories(criteria, array){
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.cost > b.cost ){ return -1; } // cambio name por cost
+            if ( a.cost > b.cost ){ return -1; } 
             if ( a.cost < b.cost ){ return 1; }
             return 0;
         });
@@ -39,6 +39,11 @@ function sortCategories(criteria, array){
     return result;
 }
 
+function setProdID(id) { 
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
 function showCategoriesList(array){ 
     let htmlContentToAppend = "";
 
@@ -46,12 +51,12 @@ function showCategoriesList(array){
         let category = productos[i]; 
         let buscador = document.getElementById('buscador').value.toLowerCase();
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) && //agregué las condicionales, cambié por cost
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) && 
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount)) &&
-            ((category.name.toLowerCase().includes(buscador)))) { // desafiate
+            ((category.name.toLowerCase().includes(buscador)))) { 
 
             htmlContentToAppend += `
-                <div class="list-group-item list-group-item-action">
+         <div onclick="setProdID(${category.id})" class="list-group-item list-group-item-action cursor-active"> 
                     <div class="row">
                         <div class="col-3">
                             <img src="` + category.image + `" alt="product image" class="img-thumbnail">
@@ -64,10 +69,9 @@ function showCategoriesList(array){
                                 </div>
                                 <small class="text-muted">` + category.soldCount + ` artículos</small> 
                             </div>
-
                         </div>
                     </div>
-                </div>
+            </div>    
                 `
         }
         document.getElementById("container-autos").innerHTML = htmlContentToAppend; 
@@ -77,10 +81,10 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
     currentSortCriteria = sortCriteria;
 
     if(categoriesArray != undefined){
-        productos = categoriesArray; //aca era mi fallo cmabie por products
+        productos = categoriesArray; 
     }
 
-    productos = sortCategories(currentSortCriteria, productos);// igual que acá
+    productos = sortCategories(currentSortCriteria, productos);
 
     showCategoriesList();
 }
