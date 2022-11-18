@@ -188,3 +188,6 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+.perfil {
+  height: 200px;
+}

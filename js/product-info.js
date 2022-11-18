@@ -43,10 +43,10 @@ function infoProductArray(productInformacion){
         <h4><b> Imágenes ilustrativas </b></h3>
         </div>
         `
-        productRelacionados(productInformacion);//funcion recien creada
+        productRelacionados(productInformacion);
 };
 
-function productRelacionados(productInformacion){ //funcion que desestructura y que iguala al array con relatedproducts de ahi sacamos nombre, id e imagen, luego se setea
+function productRelacionados(productInformacion){ 
     let htmlContentToPrint = "";
     let {relatedProducts} = productInformacion;
     for (let products of relatedProducts){
@@ -123,7 +123,7 @@ function infoComentarios(){
         }
         
 };
-function setProdID(id) { //setproId para setear a relacionados
+function setProdID(id) {
     localStorage.setItem("prodID", id);
     window.location = "product-info.html"
 }

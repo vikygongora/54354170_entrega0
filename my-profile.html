@@ -48,8 +48,8 @@
             <button class="btn btn-secondary dropdown-toggle" class="nav-link" id="email" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Mi carrito</a></li>
-              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="#" id="carrito">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="#" id="perfil">Mi perfil</a></li>
               <li><a class="dropdown-item" href="#" id="cierra">Cerrar sesión</a></li>
             </ul>
           </div>
@@ -58,11 +58,34 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
+    
+    <div class="container" >
+    <div class="row"> <div class="col-12 my-3 p-3"><h3 class="p-3">Mi perfil</h3> </div> </div>
+      <div class="d-flex justify-content-center"> <img class="perfil" src="/img/img_perfil.png" id="foto"></div>
+      <div class="d-flex justify-content-center"><input type="file" name="" id="file"></div>
+      <form class="p-3 needs-validation" id="form" action="" novalidate >
+          <br>
+          <div class="container"></div>
+          <div class="row">
+            <div class="col"> <p>Nombre</p><input type="text" class="form-control w-40" id="nombre"required ></div>
+            <div class="col"><p>Segundo nombre</p><input type="text" class="form-control w-40"id="snombre"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col"> <p>Apellido</p><input type="text" class="form-control w-40" required id="apellido"></div>
+            <div class="col"><p>Segundo apellido</p><input type="text" class="form-control w-40" id="sapellido"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col"> <p>Email</p><input type="email" class="form-control w-40" id="emailInput" required ></div>
+            <div class="col"><p>Número de contacto</p><input type="text" class="form-control w-40"  id="numero"></div>
+          </div>
+          </div>
+            <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Crear perfil</button>
+          </div>
+      </form> 
+   </div>
   </main>
   <footer class="text-muted">
     <div class="container">

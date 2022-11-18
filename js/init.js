@@ -6,8 +6,9 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/prod
 const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
-let cerrar = document.getElementById("cierra"); //creo variable
-
+let cerrar = document.getElementById("cierra");
+let carritoInicio1 = document.getElementById("carrito");
+let miPerfil = document.getElementById("perfil");
 
 
 let showSpinner = function(){
@@ -47,10 +48,21 @@ document.getElementById("email").innerHTML = guardadoEmail;
  
 
 
-cerrar.addEventListener("click", seCierra); // creo evento de click
+cerrar.addEventListener("click", seCierra); 
 
-function seCierra(){ //funcion para cerrar
+function seCierra(){ 
   localStorage.clear()
   window.location.href = "index.html";
 };
 
+carritoInicio1.addEventListener("click", carritoInicio); 
+
+function carritoInicio(){
+  window.location.href = "cart.html";
+};
+
+miPerfil.addEventListener("click", perfilCierra); 
+
+function perfilCierra(){
+  window.location.href = "my-profile.html";
+};
